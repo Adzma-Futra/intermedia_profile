@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Intermedia</title>
+    <link rel="shortcut icon" href="assets/Logo INMED.svg" type="image/x-icon">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap"
         rel="stylesheet">
@@ -12,7 +13,56 @@
     <link rel="stylesheet" href="output.css">
 </head>
 
+
 <body>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+    function initAutoScroll(selector, mobileOnly = false) {
+    document.querySelectorAll(selector).forEach(container => {
+      let interval;
+
+      function start() {
+        let direction = 1;
+        interval = setInterval(() => {
+          container.scrollLeft += direction;
+
+          if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+            direction = -1;
+          }
+
+          if (container.scrollLeft <= 0) {
+            direction = 1;
+          }
+        }, 20);
+      }
+
+      function handle() {
+        if (mobileOnly) {
+          if (window.innerWidth < 1024) {
+            if (!interval) start();
+          } else {
+            clearInterval(interval);
+            interval = null;
+          }
+        } else {
+          if (!interval) start();
+        }
+      }
+
+      handle();
+      window.addEventListener("resize", handle);
+    });
+    }
+
+    initAutoScroll('.auto-scroll'); // semua device
+    initAutoScroll('.auto-scroll-mobile', true); // mobile & tablet saja
+
+    });
+    </script>
+
+
+
     <!-- Header -->
     <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10 px-10 lg:px-28">
         <div class="flex items-center w-full justify-between relative">
@@ -47,7 +97,7 @@
                                 class="text-sm text-black py-2 mx-8 flex group-hover:text-green-800 lg:text-lg">Pengurus</a>
                         </li>
                         <li class="group">
-                            <a href="#footer"
+                            <a href="blog.html"
                                 class="text-sm text-black py-2 mx-8 flex group-hover:text-green-800 lg:text-lg">Blog</a>
                         </li>
                     </ul>
@@ -69,7 +119,7 @@
             <div class="flex items-center px-10 mt-14 lg:px-80">
                 <hr class="flex-grow border-t border-gray-500 border-dashed">
                 <a href=""
-                    class="bg-primary text-white text-sm px-5 py-3 rounded-xl font-semibold mx-5 lg:mx-8 lg:px-8 lg:py-5 lg:text-2xl lg:rounded-3xl">Lihat
+                    class="bg-primary text-white text-sm px-10 py-3 rounded-xl font-semibold mx-5 lg:mx-8 sm:px-11 md:px-12 lg:px-12 lg:py-5 lg:text-2xl lg:rounded-3xl">Lihat
                     Event Terdekat</a>
                 <hr class="flex-grow border-t border-gray-500 border-dashed">
             </div>
@@ -78,21 +128,24 @@
         </div>
 
         <div
-            class="flex gap-4 mb-28 justify-center container-snap container-snap::webkit-scrollbar lg:overflow-x-auto lg:justify-stretch lg:gap-8">
+            class="flex gap-4 mb-28 justify-center container-snap container-snap::webkit-scrollbar lg:overflow-x-auto lg:justify-stretch lg:gap-8 lg:overflow-hidden auto-scroll">
             <div class="flex flex-col items-center mt-6 lg:mt-10">
                 <div class="flex flex-col gap-3 lg:flex lg:flex-row lg:gap-8">
                     <div
                         class="flex flex-col items-center justify-center line-clamp-2 bg-grayColor min-h-20 w-48 px-14 text-center text-blackColor text-xl font-bold rounded-2xl lg:text-3xl lg:min-h-28 lg:w-72 lg:px-14 lg:ml-36">
-                        TechTalk</div>
+                        INTIME</div>
                     <div
                         class="flex flex-col items-center justify-center line-clamp-2 bg-grayColor min-h-20 w-48 px-14 text-center text-blackColor text-xl font-bold rounded-2xl lg:text-3xl lg:min-h-28 lg:w-72 lg:px-14">
-                        LDK</div>
+                        IBM</div>
                     <div
                         class="flex flex-col items-center justify-center line-clamp-2 bg-grayColor min-h-20 w-48 px-14 text-center text-blackColor text-xl font-bold rounded-2xl lg:text-3xl lg:min-h-28 lg:w-72 lg:px-14">
-                        Be Confident</div>
+                        IITC</div>
                     <div
                         class="flex flex-col items-center justify-center line-clamp-2 bg-grayColor min-h-20 w-48 px-14 text-center text-blackColor text-xl font-bold rounded-2xl lg:text-3xl lg:min-h-28 lg:w-72 lg:px-14">
-                        Sharing Session</div>
+                        IMAGINE</div>
+                    <div
+                        class="flex flex-col items-center justify-center line-clamp-2 bg-grayColor min-h-20 w-48 px-14 text-center text-blackColor text-xl font-bold rounded-2xl lg:text-3xl lg:min-h-28 lg:w-72 lg:px-14">
+                        Podcast</div>
                 </div>
 
             </div>
@@ -101,16 +154,16 @@
                 <div class="flex flex-col gap-3 lg:flex lg:flex-row lg:gap-8">
                     <div
                         class="flex flex-col items-center justify-center line-clamp-2 bg-grayColor min-h-20 w-48 px-14 text-center text-blackColor text-xl font-bold rounded-2xl lg:text-3xl lg:min-h-28 lg:w-72 lg:px-14">
-                        IITC</div>
+                        INTERHUG</div>
                     <div
                         class="flex flex-col items-center justify-center line-clamp-2 bg-grayColor min-h-20 w-48 px-14 text-center text-blackColor text-xl font-bold rounded-2xl lg:text-3xl lg:min-h-28 lg:w-72 lg:px-14">
-                        Studi Banding</div>
+                        IGD</div>
                     <div
                         class="flex flex-col items-center justify-center line-clamp-2 bg-grayColor min-h-20 w-48 px-14 text-center text-blackColor text-xl font-bold rounded-2xl lg:text-3xl lg:min-h-28 lg:w-72 lg:px-14">
-                        Makrab</div>
+                        LDK</div>
                     <div
                         class="flex flex-col items-center justify-center line-clamp-2 bg-grayColor min-h-20 w-48 px-14 text-center text-blackColor text-xl font-bold rounded-2xl lg:text-3xl lg:min-h-28 lg:w-72 lg:px-14 lg:mr-36">
-                        IBM</div>
+                        Makrab</div>
                 </div>
 
             </div>
@@ -121,7 +174,7 @@
     <section id="about">
         <div
             class="flex flex-col bg-primary min-h-60 py-10 px-10 items-center lg:min-h-96 lg:flex lg:flex-row lg:px-60 lg:py-28 lg:gap-20">
-            <img src="assets/INTERMEDIA 3.png" class="w-40 lg:w-56" alt="">
+            <img src="assets/Logo INMED.png" class="w-48 lg:w-72" alt="">
             <div class="flex flex-col items-center text-center lg:items-start lg:gap-8">
                 <h2 class="text-xl text-white font-bold font-display mb-2 mt-5 lg:text-5xl">Mengenal lebih dekat</h2>
                 <h2 class="text-sm text-green-100 lg:text-2xl lg:text-justify">Unit kegiatan mahasiswa yang berdiri
@@ -135,32 +188,46 @@
     </section>
 
     <!-- visi-misi -->
-    <section id="visi-misi">
+    <section id="visi-misi" class="mt-20 lg:mt-24">
         <div class="flex items-center px-14 mt-32 lg:px-80 lg:mt-44">
             <hr class="flex-grow border-t border-gray-500 border-dashed">
-            <div class="bg-lightGreenColor text-sm px-5 py-2 rounded-xl font-semibold mx-5 lg:text-2xl lg:rounded-2xl lg:px-7 lg:mx-8 lg:py-3"><span
+            <div class="bg-lightGreenColor text-sm px-10 py-2 rounded-xl font-semibold mx-5 lg:text-2xl lg:rounded-2xl sm:px-10 md:px-10 lg:px-10 lg:mx-8 lg:py-3"><span
                     class="text-lg font-bold font-display text-blackColor lg:text-4xl">Visi Kami</span></div>
             <hr class="flex-grow border-t border-gray-500 border-dashed">
         </div> 
-        <div class="flex flex-col items-center mt-2 mx-5 lg:mt-6">
-            <span class="text-primary text-sm text-center lg:text-2xl">Mencerdaskan Kehidupan Bangsa Dalam Dunia
-                Teknologi</span>
+        <div class="flex flex-col items-center text-center lg:gap-8 lg:items-start mt-2 mx-5 lg:mt-6 lg:px-52">
+            <span class="text-primary text-sm lg:text-justify lg:text-2xl">Menjadikan UKM INTERMEDIA sebagai wadah pengembangan sumber daya manusia yang unggul di bidang teknologi, 
+                bersinergi dalam kolaborasi, berinovasi secara berkelanjutan, menjunjung nilai kekeluargaan, serta memberikan manfaat nyata bagi internal dan eksternal kampus.</span>
         </div>
 
         <div class="flex items-center px-14 mt-10 lg:px-80 lg:mt-24">
             <hr class="flex-grow border-t border-gray-500 border-dashed">
-            <div class="bg-primary text-sm px-5 py-2 rounded-xl font-semibold mx-5 lg:text-2xl lg:rounded-2xl lg:px-7 lg:mx-8 lg:py-3"><span
+            <div class="bg-primary text-sm px-10 py-2 rounded-xl font-semibold mx-5 lg:text-2xl lg:rounded-2xl sm:px-10 md:px-10 lg:px-10 lg:mx-8 lg:py-3"><span
                     class="text-lg font-bold font-display text-white lg:text-4xl">Misi Kami</span></div>
             <hr class="flex-grow border-t border-gray-500 border-dashed">
         </div> 
-        <div class="flex flex-col items-center mt-2 mx-4 lg:mt-6">
-            <span class="text-primary text-sm italic text-center lg:text-2xl lg:mt-2 lg:px-52">Meningkatkan pengetahuan
-                dan kemampuan anggota UKM INTERMEDIA
-                dalam bidang ITMenyalurkan kemampuan anggota UKM INTERMEDIA kepada mahasiswa dan masyarakat umum.</span>
-        </div>
-        
-            
-       
+        <div class="flex flex-col items-center text-center lg:gap-8 mt-4 px-4 sm:px-8 md:px-12 lg:px-52">
+            <ol class="lg:text-justify sm:text-justify list-decimal list-inside space-y-4 text-primary text-sm sm:text-base md:text-lg lg:text-2xl italic text-left md:text-justify leading-relaxed">
+                <li>
+                   1. Menjadi wadah pengembangan anggota UKM INTERMEDIA melalui pelatihan, mentoring,
+                   dan program pengembangan yang berfokus pada keahlian, inovasi, kreativitas, dan jiwa kompetitif.
+                </li>
+                <li>
+                    2. Menciptakan lingkungan yang harmonis dengan memperkuat komunikasi,
+                    menjalin hubungan kekeluargaan, dan mendorong kolaborasi antar seluruh elemen UKM INTERMEDIA.
+                </li>
+                <li>
+                    3. Menyusun dan melaksanakan program-program yang menarik dan relevan 
+                    untuk mendorong kebersamaan, kreativitas, serta keterlibatan aktif anggota UKM INTERMEDIA.
+                </li>
+                <li>
+                    4. Menjalin kolaborasi dengan lingkungan kampus dan masyarakat luas guna
+                    mendukung kemajuan organisasi dan menciptakan inovasi teknologi yang bermanfaat.
+                </li>
+
+            </ol>
+       </div>
+
     </section>
 
     <!-- pengurus -->
@@ -171,96 +238,42 @@
             <hr class="flex-grow border-t border-gray-500 border-dashed">
         </div> 
         <div class="flex flex-col items-center mt-1 lg:mt-2">
-            <span class="text-slate-400 text-xs font-semibold tracking-tight lg:text-xl">PERIODE 2023/2024</span>
+            <span class="text-slate-400 text-xs font-semibold tracking-tight lg:text-xl">PERIODE 2025/2026</span>
         </div>
         <div class="flex flex-col items-center">
             <span class="mt-8 font-display text-primary font-semibold mx-auto lg:text-2xl lg:mt-12">Pengurus
                 Harian</span>
         </div>
 
-        <div
-            class="flex overflow-x-scroll container-snap container-snap::-webkit-scrollbar hide-scroll-bar mt-5 lg:mt-7">
+        <div class="flex overflow-x-scroll container-snap container-snap::-webkit-scrollbar hide-scroll-bar mt-5 lg:mt-7 auto-scroll">
             <div class="flex">
                 <div class="inline-block pl-3 pr-3 lg:pl-7 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                     lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/aksana_profile.jpeg"
+                        <img src="assets/pp_pengurus/angga.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Aksana
-                                Zachri Satria </span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Angga Dwi Saputra</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Ketua
                                 Umum</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2021</span>
+                                2024</span>
                         </div>
                     </div>
                 </div>
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                     lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/sabita_profile.jpeg"
+                        <img src="assets/pp_pengurus/mutia.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Sabita
-                                Salsabila</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Mutia Nur Azizah</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Wakil
                                 Ketua</span>
-                            <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2022</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="inline-block pr-3 lg:pr-7">
-                    <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
-                    lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/lulu_profile.jpeg"
-                            class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
-                        <div class="flex flex-col lg:items-start">
-                            <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Lulu
-                                Amnah Fitriya M.</span>
-                            <span
-                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Sekertaris
-                                1</span>
-                            <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2022</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="inline-block pr-3 lg:pr-7">
-                    <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
-                    lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/kana_profile.jpeg"
-                            class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
-                        <div class="flex flex-col lg:items-start">
-                            <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Kana
-                                Juliani</span>
-                            <span
-                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Bendahara
-                                1</span>
-                            <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2022</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="inline-block pr-3 lg:pr-7">
-                    <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
-                    lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/lutfiyah_profile.jpeg"
-                            class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
-                        <div class="flex flex-col lg:items-start">
-                            <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Luthfiyah
-                                Salsabila</span>
-                            <span
-                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Sekertaris
-                                2</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
                                 2023</span>
                         </div>
@@ -269,16 +282,63 @@
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                     lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/arianti_profile.jpeg"
+                        <img src="assets/pp_pengurus/ida.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Arianti</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Ida Feriani Nurya</span>
+                            <span
+                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Sekertaris
+                                1</span>
+                            <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
+                                2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline-block pr-3 lg:pr-7">
+                    <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
+                    lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
+                        <img src="assets/pp_pengurus/lilis.jpg"
+                            class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
+                        <div class="flex flex-col lg:items-start">
+                            <span
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Lilis Adi Pratiwi</span>
+                            <span
+                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Sekertaris
+                                2</span>
+                            <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
+                                2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline-block pr-3 lg:pr-7">
+                    <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
+                    lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
+                        <img src="assets/pp_pengurus/dwi rizkia.jpg"
+                            class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
+                        <div class="flex flex-col lg:items-start">
+                            <span
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Dwi Rizkia Ashari</span>
+                            <span
+                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Bendahara 1</span>
+                            <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
+                                2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline-block pr-3 lg:pr-7">
+                    <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
+                    lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
+                        <img src="assets/pp_pengurus/maylinda.jpg"
+                            class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
+                        <div class="flex flex-col lg:items-start">
+                            <span
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Maylinda Eka Saputri</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Bendahara
                                 2</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2022</span>
+                                2025</span>
                         </div>
                     </div>
                 </div>
@@ -295,18 +355,17 @@
         <div class="flex justify-center items-center mt-5 ">
             <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/irga_profile.jpeg"
+                        <img src="assets/pp_pengurus/sofyan.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-5" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Muhamad
-                                Irga K. M.</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Sofyan Khoiron Mukhlis</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Koordinator
                                 Keilmuan</span>
                             <span
                                 class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2022</span>
+                                2024</span>
                         </div>
             </div>
         </div>
@@ -317,23 +376,22 @@
                 class="mt-10 font-display text-primary font-semibold text-center lg:text-2xl lg:mt-20">Multimedia</span>
         </div>
 
-        <div class="flex overflow-x-scroll container-snap container-snap::-webkit-scrollbar hide-scroll-bar mt-5 lg:mt-7">
+        <div class="flex overflow-x-scroll container-snap container-snap::-webkit-scrollbar hide-scroll-bar mt-5 lg:mt-7 auto-scroll">
             <div class="flex">
                 <div class="inline-block pl-3 pr-3 lg:pl-7 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/wiqor_profile.jpeg"
+                        <img src="assets/pp_pengurus/pirdos.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-5" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Wiqor
-                                Furqoni</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Firdaus Purwantoro</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Koordinator
                                 Multimedia</span>
                             <span
                                 class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2022</span>
+                                2024</span>
                         </div>
                     </div>
                 </div>
@@ -342,18 +400,17 @@
                     <div
                         class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                     lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/widya_profile.jpeg"
+                        <img src="assets/pp_pengurus/zaidan.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-5" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Widya
-                                Tri Purnomo</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Zaidan Haidar Syahputra</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota
                                 Div. Mutimedia</span>
                             <span
                                 class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2021</span>
+                                2024</span>
                         </div>
                     </div>
                 </div>
@@ -361,17 +418,17 @@
                     <div
                         class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                     lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/rafik_profile.jpeg"
+                        <img src="assets/pp_pengurus/april.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-5" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Rafik Akbar S. A.</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Kharisma Aprilia</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota
                                 Div. Mutimedia</span>
                             <span
                                 class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2021</span>
+                                2024</span>
                         </div>
                     </div>
                 </div>
@@ -379,17 +436,35 @@
                     <div
                         class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                     lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/dian_profile.jpeg"
+                        <img src="assets/pp_pengurus/vonny.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-5" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Dian Sri Lestari</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Vonny Pramadhanti</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota
                                 Div. Mutimedia</span>
                             <span
                                 class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2023</span>
+                                2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline-block pr-3 lg:pr-7">
+                    <div
+                        class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
+                    lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
+                        <img src="assets/pp_pengurus/fawwaz.jpg"
+                            class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-5" alt="">
+                        <div class="flex flex-col lg:items-start">
+                            <span
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Fawwaz Zaharza Al Baihaqi</span>
+                            <span
+                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota
+                                Div. Mutimedia</span>
+                            <span
+                                class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
+                                2025</span>
                         </div>
                     </div>
                 </div>
@@ -401,23 +476,22 @@
                 class="mt-10 font-display text-primary font-semibold text-center lg:text-2xl lg:mt-20">Programming</span>
         </div>
 
-        <div class="flex overflow-x-scroll container-snap container-snap::-webkit-scrollbar hide-scroll-bar mt-5 lg:mt-7">
+        <div class="flex overflow-x-scroll container-snap container-snap::-webkit-scrollbar hide-scroll-bar mt-5 lg:mt-7 auto-scroll">
             <div class="flex">
                 <div class="inline-block pl-3 pr-3 lg:pl-7 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/didi_profile.jpeg"
+                        <img src="assets/pp_pengurus/rizky julianto.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-5" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Didi
-                                Prasetyo</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Rizky Julianto</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Koordinator
                                 Programming</span>
                             <span
                                 class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2022</span>
+                                2024</span>
                         </div>
                     </div>
                 </div>
@@ -426,17 +500,17 @@
                     <div
                         class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                     lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/iwan_profile.jpeg"
+                        <img src="assets/pp_pengurus/rubben.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-5" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Iwan Haryatno</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Rubben Mulyo Santoso</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota
                                 Div. Programming</span>
                             <span
                                 class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2023</span>
+                                2025</span>
                         </div>
                     </div>
                 </div>
@@ -444,17 +518,17 @@
                     <div
                         class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                     lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/taufik_profile.jpeg"
+                        <img src="assets/pp_pengurus/adzma.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-5" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Taufik Hidayatulloh</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Adzma Futra Al Falah</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota
                                 Div. Programming</span>
                             <span
                                 class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2021</span>
+                                2025</span>
                         </div>
                     </div>
                 </div>
@@ -462,17 +536,35 @@
                     <div
                         class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                     lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/bintang_profile.jpeg"
+                        <img src="assets/pp_pengurus/rizky tri.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-5" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Bintang Fadilah R.</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Rizki Triananda</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota
                                 Div. Programming</span>
                             <span
                                 class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2023</span>
+                                2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline-block pr-3 lg:pr-7">
+                    <div
+                        class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
+                    lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
+                        <img src="assets/pp_pengurus/faiz.jpg"
+                            class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-5" alt="">
+                        <div class="flex flex-col lg:items-start">
+                            <span
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Faizurrohim Ramadhani</span>
+                            <span
+                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota
+                                Div. Programming</span>
+                            <span
+                                class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
+                                2024</span>
                         </div>
                     </div>
                 </div>
@@ -486,17 +578,16 @@
                 class="mt-10 font-display text-primary font-semibold text-center lg:text-2xl lg:mt-20">Sistem Robotika</span>
         </div>
 
-        <div class="flex overflow-x-scroll container-snap container-snap::-webkit-scrollbar hide-scroll-bar mt-5 lg:mt-7">
+        <div class="flex overflow-x-scroll container-snap container-snap::-webkit-scrollbar hide-scroll-bar mt-5 lg:mt-7 auto-scroll">
             <div class="flex">
                 <div class="inline-block pl-3 pr-3 lg:pl-7 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/febri_profile.jpeg"
+                        <img src="assets/pp_pengurus/shendy.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-5" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Febri
-                                Pratama</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Shendy Fiilanzi</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Koordinator
                                 Sistem Robotika</span>
@@ -512,17 +603,17 @@
                     <div
                         class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                     lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/dendi_profile.jpeg"
+                        <img src="assets/pp_pengurus/bagus.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-5" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Dendi Putra Prakoso</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Bagus Setiawan</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota
                                 Div. Sistem Robotika</span>
                             <span
                                 class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2023</span>
+                                2024</span>
                         </div>
                     </div>
                 </div>
@@ -531,17 +622,35 @@
                     <div
                         class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                     lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/dominic_profile.jpeg"
+                        <img src="assets/pp_pengurus/davy.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-5" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Dominic Dinand A.</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Davy Irsyad Tulloh</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota
                                 Div. Sistem Robotika</span>
                             <span
                                 class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2023</span>
+                                2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline-block pr-3 lg:pr-7">
+                    <div
+                        class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
+                    lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
+                        <img src="assets/pp_pengurus/febryan.jpg"
+                            class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-5" alt="">
+                        <div class="flex flex-col lg:items-start">
+                            <span
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Febrian Bagus Utomo</span>
+                            <span
+                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota
+                                Div. Sistem Robotika</span>
+                            <span
+                                class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
+                                2025</span>
                         </div>
                     </div>
                 </div>
@@ -555,97 +664,96 @@
                 class="mt-10 font-display text-primary font-semibold text-center lg:text-2xl lg:mt-20">Kaderisasi</span>
         </div>
 
-        <div
-            class="flex overflow-x-scroll container-snap container-snap::-webkit-scrollbar hide-scroll-bar mt-5 lg:mt-7">
+        <div class="flex overflow-x-scroll container-snap container-snap::-webkit-scrollbar hide-scroll-bar mt-5 lg:mt-7 auto-scroll">
             <div class="flex">
                 <div class="inline-block pl-3 pr-3 lg:pl-7 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/farhan_profile.jpeg"
+                        <img src="assets/pp_pengurus/nalen.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Farhan Rafi Ramadhan</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Nalendra Alamsyah Sutomo</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Koordinator Kaderisasi</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2022</span>
+                                2024</span>
                         </div>
                     </div>
                 </div>
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/putri_profile.jpeg"
+                        <img src="assets/pp_pengurus/"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Putri Oktavianingsih</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Diva Aura Jelita</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota
                                 Kaderisasi</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2022</span>
+                                2025</span>
                         </div>
                     </div>
                 </div>
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/arifah_profile.jpeg"
+                        <img src="assets/pp_pengurus/aya.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Arifah Budi Hidayah</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Mayada Beni Pratiwi</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Kaderisasi</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2023</span>
+                                2025</span>
                         </div>
                     </div>
                 </div>
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/aziz_profile.jpeg"
+                        <img src="assets/pp_pengurus/fondyta.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Azis Zakaria</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Fondyta Putri Bercahya</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Kaderisasi</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2022</span>
+                                2024</span>
                         </div>
                     </div>
                 </div>
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/samara_profile.jpeg"
+                        <img src="assets/pp_pengurus/radith.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Samara Mitsagan G.</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Radith Saifurrohman</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Kaderisasi</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2022</span>
+                                2025</span>
                         </div>
                     </div>
                 </div>
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/aura_profile.jpeg"
+                        <img src="assets/pp_pengurus/ayu.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Aura Arnelia Zahrani</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Seneng Rahayu</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Kaderisasi</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2023</span>
+                                2024</span>
                         </div>
                     </div>
                 </div>
@@ -659,96 +767,95 @@
                 Creator</span>
         </div>
 
-        <div
-            class="flex overflow-x-scroll container-snap container-snap::-webkit-scrollbar hide-scroll-bar mt-5 lg:mt-7">
+        <div class="flex overflow-x-scroll container-snap container-snap::-webkit-scrollbar hide-scroll-bar mt-5 lg:mt-7 auto-scroll">
             <div class="flex">
                 <div class="inline-block pl-3 pr-3 lg:pl-7 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/zhafira_profile.jpeg"
+                        <img src="assets/pp_pengurus/da'i.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Zhafira Aryani Putri</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Da’i Gustiantoro</span>
                             <span
-                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Koordinatoe Content Creator</span>
+                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Koordinator Content Creator</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2021</span>
+                                2024</span>
                         </div>
                     </div>
                 </div>
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/hanan_profile.jpeg"
+                        <img src="assets/pp_pengurus/rahmat.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Hanan Abdul Ghani</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Rahmat Hidayat</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Content Creator</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2021</span>
+                                2024</span>
                         </div>
                     </div>
                 </div>
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/ratih_profile.jpeg"
+                        <img src="assets/pp_pengurus/yusuf.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Ratih Anggraeni</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Yusuf Bahtiar</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Content Creator</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2022</span>
+                                2025</span>
                         </div>
                     </div>
                 </div>
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/dzaki_profile.jpeg"
+                        <img src="assets/pp_pengurus/dini.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Dzaki Pagarta Nesta</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Dini Suci Inayatus Saniah</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Content Creator</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2022</span>
+                                2025</span>
                         </div>
                     </div>
                 </div>
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/ridho_profile.jpeg"
+                        <img src="assets/pp_pengurus/bagas.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Ridho Satrio</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Bagas Adhiel Firmansyah</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Content Creator</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2023</span>
+                                2024</span>
                         </div>
                     </div>
                 </div>
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/anas_profile.jpeg"
+                        <img src="assets/pp_pengurus/khansa.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Anas Nur Khafid</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Khansa Hasna Putri Karunia</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Content Creator</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2022</span>
+                                2024</span>
                         </div>
                     </div>
                 </div>
@@ -760,92 +867,91 @@
             <span class="mt-10 font-display text-primary font-semibold text-center lg:text-2xl lg:mt-20">Humas</span>
         </div>
 
-        <div
-            class="flex overflow-x-scroll container-snap container-snap::-webkit-scrollbar hide-scroll-bar mt-5 lg:mt-7">
+        <div class="flex overflow-x-scroll container-snap container-snap::-webkit-scrollbar hide-scroll-bar mt-5 lg:mt-7 auto-scroll">
             <div class="flex">
                 <div class="inline-block pl-3 pr-3 lg:pl-7 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/wisnu_profile.jpeg"
+                        <img src="assets/pp_pengurus/nibras.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Wisnu Mu'amar</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Nibras Asykar Zen</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Koordinator Humas</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2023</span>
+                                2024</span>
                         </div>
                     </div>
                 </div>
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/nurul_profile.jpeg"
+                        <img src="assets/pp_pengurus/catur.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Nurul Hani</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Dias Catur Putra</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Humas</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2021</span>
+                                2025</span>
                         </div>
                     </div>
                 </div>
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/gina_profile.jpeg"
+                        <img src="assets/pp_pengurus/suci.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">RR. Gina Kusumardani</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Fajar Suci Lestari</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Humas</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2021</span>
+                                2024</span>
                         </div>
                     </div>
                 </div>
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/nina_profile.jpeg"
+                        <img src="assets/pp_pengurus/lailatul.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Nina Aryani</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Lailatul Mauliyah</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Humas</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2022</span>
+                                2025</span>
                         </div>
                     </div>
                 </div>
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/ahmar_profile.jpeg"
+                        <img src="assets/pp_pengurus/friska.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Ahmar Dwi Utomo</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Friska Amalia Putri</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Humas</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
-                                2023</span>
+                                2024</span>
                         </div>
                     </div>
                 </div>
                 <div class="inline-block pr-3 lg:pr-7">
                     <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
                 lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
-                        <img src="assets/pp_pengurus/ani_profile.jpeg"
+                        <img src="assets/pp_pengurus/tifa.jpg"
                             class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
                         <div class="flex flex-col lg:items-start">
                             <span
-                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Ani Musarofah</span>
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Tifa Fitriana</span>
                             <span
                                 class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Humas</span>
                             <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
@@ -856,16 +962,115 @@
             </div>
         </div>
 
+        <div class="flex flex-col items-center">
+            <span class="mt-10 font-display text-primary font-semibold text-center lg:text-2xl lg:mt-20">Ristek</span>
+        </div>
+
+        <div class="flex overflow-x-scroll container-snap container-snap::-webkit-scrollbar hide-scroll-bar mt-5 lg:mt-7 auto-scroll">
+            <div class="flex">
+                <div class="inline-block pl-3 pr-3 lg:pl-7 lg:pr-7">
+                    <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
+                lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
+                        <img src="assets/pp_pengurus/octav.jpg"
+                            class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
+                        <div class="flex flex-col lg:items-start">
+                            <span
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Niha Octafiana Ramadhani</span>
+                            <span
+                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Koordinator Ristek</span>
+                            <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
+                                2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline-block pr-3 lg:pr-7">
+                    <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
+                lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
+                        <img src="assets/pp_pengurus/bryan.jpg"
+                            class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
+                        <div class="flex flex-col lg:items-start">
+                            <span
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">M Bryan Kaska Nurhakim</span>
+                            <span
+                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Ristek</span>
+                            <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
+                                2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline-block pr-3 lg:pr-7">
+                    <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
+                lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
+                        <img src="assets/pp_pengurus/siti halimah.jpg"
+                            class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
+                        <div class="flex flex-col lg:items-start">
+                            <span
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Siti Halimah</span>
+                            <span
+                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Ristek</span>
+                            <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
+                                2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline-block pr-3 lg:pr-7">
+                    <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
+                lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
+                        <img src="assets/pp_pengurus/daway.jpg"
+                            class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
+                        <div class="flex flex-col lg:items-start">
+                            <span
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Daway Rahmat Tinata</span>
+                            <span
+                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Ristek</span>
+                            <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
+                                2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline-block pr-3 lg:pr-7">
+                    <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
+                lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
+                        <img src="assets/pp_pengurus/livia.jpg"
+                            class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
+                        <div class="flex flex-col lg:items-start">
+                            <span
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Livia Agnes Adwitiya</span>
+                            <span
+                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Ristek</span>
+                            <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
+                                2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline-block pr-3 lg:pr-7">
+                    <div class="flex flex-col items-center w-36 h-56 p-4 max-w-2xl overflow-hidden rounded-3xl shadow-md bg-primary hover:shadow-xl transition-shadow duration-300 ease-in-out
+                lg:flex-row lg:w-[35rem] lg:h-52 lg:items-center lg:justify-start lg:p-8 lg:pr-2 lg:rounded-[30px]">
+                        <img src="assets/pp_pengurus/ardelia.jpg"
+                            class="rounded-full w-20 h-20 object-cover lg:w-36 lg:h-36 lg:mr-4" alt="">
+                        <div class="flex flex-col lg:items-start">
+                            <span
+                                class="text-white text-center text-sm mt-2 font-bold line-clamp-2 lg:text-3xl lg:mt-0 lg:text-start ">Abidah Ardelia Kendra W</span>
+                            <span
+                                class="text-white text-xs text-center mt-2 line-clamp-2 lg:text-2xl lg:mt-0 lg:text-left">Anggota Ristek</span>
+                            <span class="text-lightGreenColor text-xs italic text-center mt-2 lg:text-2xl lg:mt-0">Angkatan
+                                2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
-    <section id="divisi" class="lg:px-32 mb-32">
+    <section id="divisi" class="lg:px-32 mb-32 mt-20 lg:mt-28">
         <div class="flex items-center px-14 mt-36 lg:px-80 lg:mt-44">
             <hr class="flex-grow border-t border-gray-500 border-dashed">
             <h2 class="font-display text-primary text-xl mx-5 font-bold text-center lg:text-4xl">Divisi
                 Pembelajaran</h2>
             <hr class="flex-grow border-t border-gray-500 border-dashed">
         </div> 
-        <div class="flex mt-10 overflow-x-auto gap-4 container-snap container-snap::webkit-scrollbar lg:gap-8">
+        <div class="flex mt-10 overflow-x-auto gap-4 container-snap container-snap::webkit-scrollbar lg:gap-8 auto-scroll-mobile">
             <div class="flex flex-col min-w-64 min-h-40 bg-[#B8EEBA] ml-4 rounded-2xl p-4 justify-center lg:min-h-64 lg:min-w-32 lg:p-8 
                 lg:rounded-3xl">
                 <span class="font-bold text-lg text-blackColor lg:text-3xl">Programming</span>
@@ -879,15 +1084,11 @@
                     seperti 2D Design ,
                     3D Modeling, Videografi dan Game development.</span>
             </div>
-            <div class="flex flex-col min-w-64 min-h-46 bg-primary rounded-2xl p-4 justify-center mr-4 lg:min-h-64 lg:min-w-32 lg:p-8 
+            <div class="flex flex-col min-w-64 min-h-46 bg-[#B8EEBA] rounded-2xl p-4 justify-center mr-4 lg:min-h-64 lg:min-w-32 lg:p-8 
                 lg:rounded-3xl">
-                <span class="font-display font-bold text-lg text-lightGreenColor lg:text-3xl">Sistem Robotika</span>
-                <span class="text-sm text-white lg:text-xl lg:mt-10">Divisi yang berfokus pada bidang jaringan, ethical
+                <span class="font-display font-bold text-lg text-blackColor lg:text-3xl">Sistem Robotika</span>
+                <span class="text-sm text-blackColor lg:text-xl lg:mt-10">Divisi yang berfokus pada bidang jaringan, ethical
                     hacking dan system administration.</span>
-                <div
-                    class="flex bg-lightGreenColor w-16 h-8 justify-center rounded-full mt-2 items-center lg:w-24 lg:h-10">
-                    <span class="font-bold text-blackColor text-sm text-center justify-center lg:text-xl">BARU</span>
-                </div>
             </div>
         </div>
     </section>
@@ -928,7 +1129,7 @@
                 <hr class="w-full my-5 h-[1px] bg-lightGreenColor border-0 rounded lg:hidden">
                 <div class="flex justify-end items-end mb-2 lg:hidden">
                     <div class="w-72">
-                        <span class="text-white text-xs mr-5">@2023 Intermedia</span>
+                        <span class="text-white text-xs mr-5">@2026 Intermedia</span>
                     </div>
                     <div class="flex justify-end items-end lg:hidden">
                         <span class="text-white text-xs">All right reserved. zamkara oleh Kara Umbrela LLC</span>
@@ -939,7 +1140,7 @@
             <hr class="hidden lg:block lg:w-full lg:my-5 h-[1px] lg:bg-lightGreenColor lg:border-0 lg:rounded">
             <div class="flex justify-end items-end mb-2 lg:justify-between">
                 <div class="w-72 hidden lg:block">
-                    <span class="text-white text-xs mr-5 lg:text-base">@2023 Intermedia</span>
+                    <span class="text-white text-xs mr-5 lg:text-base">@2026 Intermedia</span>
                 </div>
                 <div class="hidden justify-end items-end lg:block">
                     <span class="text-white text-xs lg:text-base">All right reserved. zamkara oleh Kara Umbrela
