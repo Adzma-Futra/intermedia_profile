@@ -15,54 +15,6 @@
 
 
 <body>
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-    function initAutoScroll(selector, mobileOnly = false) {
-    document.querySelectorAll(selector).forEach(container => {
-      let interval;
-
-      function start() {
-        let direction = 1;
-        interval = setInterval(() => {
-          container.scrollLeft += direction;
-
-          if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
-            direction = -1;
-          }
-
-          if (container.scrollLeft <= 0) {
-            direction = 1;
-          }
-        }, 20);
-      }
-
-      function handle() {
-        if (mobileOnly) {
-          if (window.innerWidth < 1024) {
-            if (!interval) start();
-          } else {
-            clearInterval(interval);
-            interval = null;
-          }
-        } else {
-          if (!interval) start();
-        }
-      }
-
-      handle();
-      window.addEventListener("resize", handle);
-    });
-    }
-
-    initAutoScroll('.auto-scroll'); // semua device
-    initAutoScroll('.auto-scroll-mobile', true); // mobile & tablet saja
-
-    });
-    </script>
-
-
-
     <!-- Header -->
     <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10 px-10 lg:px-28">
         <div class="flex items-center w-full justify-between relative">
@@ -71,7 +23,7 @@
                         py-6 lg:text-lg">Intermedia</a>
             </div>
             <div class="flex items-center px-4">
-                <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
+                <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden z-50">
                     <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
                     <span class="hamburger-line transition duration-300 ease-in-out"></span>
                     <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
@@ -1152,6 +1104,52 @@
 
         </div>
     </section>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+    function initAutoScroll(selector, mobileOnly = false) {
+    document.querySelectorAll(selector).forEach(container => {
+      let interval;
+
+      function start() {
+        let direction = 1;
+        interval = setInterval(() => {
+          container.scrollLeft += direction;
+
+          if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+            direction = -1;
+          }
+
+          if (container.scrollLeft <= 0) {
+            direction = 1;
+          }
+        }, 20);
+      }
+
+      function handle() {
+        if (mobileOnly) {
+          if (window.innerWidth < 1024) {
+            if (!interval) start();
+          } else {
+            clearInterval(interval);
+            interval = null;
+          }
+        } else {
+          if (!interval) start();
+        }
+      }
+
+      handle();
+      window.addEventListener("resize", handle);
+    });
+    }
+
+    initAutoScroll('.auto-scroll'); // semua device
+    initAutoScroll('.auto-scroll-mobile', true); // mobile & tablet saja
+
+    });
+    </script>
 
     <script src="../dist/js/script.js"></script>
 </body>
