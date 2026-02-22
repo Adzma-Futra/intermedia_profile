@@ -1105,52 +1105,6 @@
         </div>
     </section>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-    function initAutoScroll(selector, mobileOnly = false) {
-    document.querySelectorAll(selector).forEach(container => {
-      let interval;
-
-      function start() {
-        let direction = 1;
-        interval = setInterval(() => {
-          container.scrollLeft += direction;
-
-          if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
-            direction = -1;
-          }
-
-          if (container.scrollLeft <= 0) {
-            direction = 1;
-          }
-        }, 20);
-      }
-
-      function handle() {
-        if (mobileOnly) {
-          if (window.innerWidth < 1024) {
-            if (!interval) start();
-          } else {
-            clearInterval(interval);
-            interval = null;
-          }
-        } else {
-          if (!interval) start();
-        }
-      }
-
-      handle();
-      window.addEventListener("resize", handle);
-    });
-    }
-
-    initAutoScroll('.auto-scroll'); // semua device
-    initAutoScroll('.auto-scroll-mobile', true); // mobile & tablet saja
-
-    });
-    </script>
-
     <script src="../dist/js/script.js"></script>
 </body>
 

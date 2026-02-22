@@ -1,127 +1,126 @@
 <!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <title>Blog | Intermedia</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="shortcut icon" href="assets/Logo INMED.svg" type="image/x-icon">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="output.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blog | Intermedia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="shortcut icon"
+      href="assets/Logo INMED.svg"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="output.css" />
+  </head>
 
-<body class="font-[Montserrat]">
+  <body class="font-[Montserrat]">
+    <header
+      class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10 px-28 lg:px-32"
+    >
+      <div class="flex items-center w-full justify-between relative">
+        <!-- Logo -->
+        <a
+          href="index.html"
+          class="text-primary font-semibold text-4xl lg:text-lg py-16 lg:py-7"
+        >
+          Intermedia
+        </a>
 
-  <!-- HEADER -->
-  <header class="absolute top-0 left-0 w-full flex items-center z-40 px-6 lg:px-28">
-    <div class="flex items-center w-full justify-between">
+        <!-- Hamburger -->
+        <button id="hamburger" type="button" class="block lg:hidden z-50 p-2">
+          <span class="block w-12 h-1.5 bg-black mb-3"></span>
+          <span class="block w-12 h-1.5 bg-black mb-3"></span>
+          <span class="block w-12 h-1.5 bg-black"></span>
+        </button>
 
-      <!-- Logo -->
-      <a href="index.html"
-        class="text-green-700 font-semibold text-xl py-6">
-        Intermedia
-      </a>
+        <!-- Menu -->
+        <nav
+          id="nav-menu"
+          class="hidden absolute right-2 top-full mt-4 bg-white shadow-2xl rounded-3xl w-full p-20 lg:block lg:static lg:bg-transparent lg:shadow-none lg:rounded-none lg:w-auto lg:p-0"
+        >
+          <ul class="flex flex-col space-y-8 lg:flex-row lg:space-y-0">
+            <li>
+              <a
+                href="index.html"
+                class="block text-4xl text-black hover:text-green-800 lg:text-lg lg:mx-8"
+              >
+                Home
+              </a>
+            </li>
 
-      <!-- Hamburger (Mobile) -->
-      <button id="hamburger" class="block lg:hidden">
-        <span class="block w-7 h-0.5 bg-black mb-1.5"></span>
-        <span class="block w-7 h-0.5 bg-black mb-1.5"></span>
-        <span class="block w-7 h-0.5 bg-black"></span>
-      </button>
+            <li>
+              <a
+                href="index.html#about"
+                class="block text-4xl text-black hover:text-green-800 lg:text-lg lg:mx-8"
+              >
+                About
+              </a>
+            </li>
 
-      <!-- Desktop Menu -->
-      <nav class="hidden lg:block">
-        <ul class="flex">
-          <li><a href="index.html" class="mx-8 hover:text-green-800">Home</a></li>
-          <li><a href="index.html#about" class="mx-8 hover:text-green-800">About</a></li>
-          <li><a href="index.html#divisi" class="mx-8 hover:text-green-800">Divisi</a></li>
-          <li><a href="index.html#pengurus" class="mx-8 hover:text-green-800">Pengurus</a></li>
-          <li><a href="blog.html" class="mx-8 hover:text-green-800">Blog</a></li>
-        </ul>
-      </nav>
+            <li>
+              <a
+                href="index.html#divisi"
+                class="block text-4xl text-black hover:text-green-800 lg:text-lg lg:mx-8"
+              >
+                Divisi
+              </a>
+            </li>
 
-    </div>
-  </header>
+            <li>
+              <a
+                href="index.html#pengurus"
+                class="block text-4xl text-black hover:text-green-800 lg:text-lg lg:mx-8"
+              >
+                Pengurus
+              </a>
+            </li>
 
-  <!-- MOBILE MENU OVERLAY -->
-  <div id="mobile-menu"
-    class="fixed inset-0 bg-black/40 backdrop-blur-sm hidden items-start justify-center pt-24 z-50 lg:hidden">
-
-    <!-- Card -->
-    <div class="bg-white w-80 rounded-2xl shadow-xl p-6 relative">
-
-      <!-- Close Button -->
-      <button id="close-menu"
-        class="absolute top-4 right-4 text-2xl font-light">
-        &times;
-      </button>
-
-      <!-- Menu List -->
-      <ul class="space-y-6 text-gray-700 mt-6 text-base">
-        <li><a href="index.html" class="block hover:text-green-700">Home</a></li>
-        <li><a href="index.html#about" class="block hover:text-green-700">About</a></li>
-        <li><a href="index.html#divisi" class="block hover:text-green-700">Divisi</a></li>
-        <li><a href="index.html#pengurus" class="block hover:text-green-700">Pengurus</a></li>
-        <li><a href="blog.html" class="block hover:text-green-700">Blog</a></li>
-      </ul>
-
-    </div>
-  </div>
-
-  <!-- TITLE -->
-  <section class="mt-16 text-center pt-24">
-    <h2 class="text-slate-500 text-3xl font-bold tracking-wide pb-10">
-      BLOG INTERMEDIA
-    </h2>
-  </section>
-
-  <!-- BLOG CARDS -->
-  <section class="mt-10 px-6 lg:px-32">
-    <div class="flex flex-wrap gap-8">
-      <div onclick="openDetail()"
-        class="cursor-pointer bg-white rounded-2xl shadow-lg w-80 hover:scale-105 transition duration-300">
-        <img src="assets/iitc.png" class="rounded-t-2xl w-full" />
-        <div class="p-6">
-          <h3 class="font-bold text-lg">IITC</h3>
-          <p class="text-sm text-gray-600 mt-2">
-            Intermedia Information Technology Competition
-          </p>
-          <button class="mt-5 bg-green-700 text-white px-4 py-2 rounded-full">
-            Baca
-          </button>
-        </div>
+            <li>
+              <a
+                href="blog.html"
+                class="block text-4xl text-black hover:text-green-800 lg:text-lg lg:mx-8"
+              >
+                Blog
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- SCRIPT -->
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const closeMenu = document.getElementById("close-menu");
+    <!-- TITLE -->
+    <section class="mt-16 text-center pt-24">
+      <h2 class="text-slate-500 text-3xl font-bold tracking-wide pb-10">
+        BLOG INTERMEDIA
+      </h2>
+    </section>
 
-    hamburger.addEventListener("click", () => {
-      mobileMenu.classList.remove("hidden");
-      mobileMenu.classList.add("flex");
-    });
+    <!-- BLOG CARDS -->
+    <section class="mt-10 px-6 lg:px-32">
+      <div class="flex flex-wrap gap-8">
+        <a
+          href="blog-detail.html"
+          class="block cursor-pointer bg-white rounded-2xl shadow-lg w-80 hover:scale-105 transition duration-300"
+        >
+          <img src="assets/iitc.png" class="rounded-t-2xl w-full" />
 
-    closeMenu.addEventListener("click", () => {
-      mobileMenu.classList.add("hidden");
-      mobileMenu.classList.remove("flex");
-    });
+          <div class="p-6">
+            <h3 class="font-bold text-lg">IITC</h3>
+            <p class="text-sm text-gray-600 mt-2">
+              Intermedia Information Technology Competition
+            </p>
 
-    mobileMenu.addEventListener("click", (e) => {
-      if (e.target === mobileMenu) {
-        mobileMenu.classList.add("hidden");
-        mobileMenu.classList.remove("flex");
-      }
-    });
+            <button class="mt-5 bg-green-700 text-white px-4 py-2 rounded-full">
+              Baca
+            </button>
+          </div>
+        </a>
+      </div>
+    </section>
 
-    function openDetail() {
-      window.location.href = "blog-detail.html";
-    }
-  </script>
-
-</body>
+    <script src="../dist/js/script.js"></script>
+  </body>
 </html>
